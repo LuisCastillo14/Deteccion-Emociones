@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// ✅ Configuración completa con proxy y soporte WS
+
 export default defineConfig({
   plugins: [react()],
   base: '/',

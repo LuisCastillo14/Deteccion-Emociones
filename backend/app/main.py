@@ -13,8 +13,8 @@ print(f"Usando credenciales de GCS en: {credetials_path}")
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://real-time-emotion-detection-seven.vercel.app",
-    "https://real-time-emotion-detection-seven.vercel.app/",
+    "https://deteccion-emociones.vercel.app",
+    "https://deteccion-emociones.vercel.app/",
 ]
 
 app.add_middleware(

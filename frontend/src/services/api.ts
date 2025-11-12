@@ -1,11 +1,14 @@
 // src/services/api.ts
 import axios from "axios";
 
-const API_URL =
-  import.meta.env.VITE_API_BASE_URL1?.toString().replace(/\/+$/, "") ||
-  "/api/v1";
+const isLocal = window.location.hostname === "localhost";
 
-console.log("API URL:", API_URL);
+
+const API_URL = isLocal
+  ? "/api/v1" 
+  : import.meta.env.VITE_API_BASE_URL1?.replace(/\/+$/, "") || "/api/v1";
+
+console.log("🌐 API base URL:", API_URL);;
 
 // ---------- Análisis de imagen ----------
 export const analyzeImage = async (file: File) => {
@@ -34,7 +37,7 @@ export const analyzeFrame = async (blob: Blob) => {
 // ---------- NUEVO: Análisis de video de YouTube ----------
 export const analyzeYouTube = async (youtubeUrl: string) => {
   const { data } = await axios.post(`${API_URL}/analyze-youtube`, {
-    url: youtubeUrl, // 👈 Cambiado de youtube_url → url
+    url: youtubeUrl, 
   });
   return data as {
     status: string;
