@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { analyzeFrame } from "../../services/api";
 import EmotionCard from "../../components/EmotionCard";
 import type { EmotionRow } from "../../components/EmotionCard";
-import "../../styles/WebcamPage.css";
+import "../../styles/WebCamPage.css";
 
 type PersonResult = {
   id: number;
