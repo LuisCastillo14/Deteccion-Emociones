@@ -1,0 +1,114 @@
+/* === Estilos para UploadPage === */
+
+/* Caja de upload */
+.upload-box {
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 500px;
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.upload-box:hover {
+  border-color: #0E1D36;
+  background-color: #f0f4ff;
+}
+
+.upload-text {
+  color: #555;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Botón principal */
+.btn-analysis {
+  background-color: #0E1D36;
+  color: white;
+  font-weight: 600;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-analysis:hover {
+  background-color: #152a4f;
+}
+
+.btn-analysis:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Dashboard */
+.card {
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Barra de progreso personalizada */
+.progress {
+  height: 20px;
+  border-radius: 8px;
+  background-color: #e9ecef;
+}
+
+.progress-bar {
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+
+.elegant-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  margin: 6px;
+  border: 6px solid #0E1D36; /* color principal */
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #0E1D36 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,56 @@
+# Node / React
+frontend/node_modules/
+frontend/dist/
+
+# Python / FastAPI
+backend/__pycache__/
+backend/.venv/
+backend/venv/
+backend/*.pyc
+backend/.mypy_cache/
+
+# Archivos de entorno
+*.env
+.env.*
+
+# Logs
+*.log
+backend/debug_face_*.jpg
+
+# Models / Large binaries
+*.h5
+*.pt
+*.onnx
+*.tflite
+
+# Credentials & Secrets (solo en carpeta credentials/)
+backend/credentials/*.json
+backend/credentials/*.pem
+backend/credentials/*.key
+backend/credentials/*.crt
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Video outputs (procesados/temporales)
+backend/processed_*.mp4
+backend/*_compressed.mp4
+backend/*_with_audio.mp4
+backend/yt_*.mp4
+tmp/
+temp/
+
+# Pytest & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Runtime
+backend/debug_faces/

@@ -1,0 +1,17 @@
+fastapi==0.115.5
+uvicorn[standard]==0.30.6
+gunicorn==21.2.0
+
+python-multipart==0.0.9
+python-dotenv==1.0.1
+pillow==10.4.0
+numpy==1.26.4
+
+# OpenCV sin dependencias de GUI (para servidores)
+opencv-python-headless==4.10.0.84
+
+# Detector y DL
+mtcnn==0.1.1
+tensorflow==2.15.0
+keras==2.15.0
+tensorflow-io-gcs-filesystem==0.31.0
