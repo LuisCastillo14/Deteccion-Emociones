@@ -1,14 +1,11 @@
 // src/services/api.ts
 import axios from "axios";
 
-const isLocal = window.location.hostname === "localhost";
+const API_URL =
+  import.meta.env.VITE_API_BASE_URL1?.toString().replace(/\/+$/, "") ||
+  "/api/v1";
 
-
-const API_URL = isLocal
-  ? "/api/v1" 
-  : import.meta.env.VITE_API_BASE_URL1?.replace(/\/+$/, "") || "/api/v1";
-
-console.log("🌐 API base URL:", API_URL);;
+console.log("API URL:", API_URL);
 
 // ---------- Análisis de imagen ----------
 export const analyzeImage = async (file: File) => {
