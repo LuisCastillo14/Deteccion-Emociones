@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 import os
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.v1 import analyze, youtube
+from app.api import analyze
+from app.api import youtube
 from dotenv import load_dotenv
 
 app = FastAPI(title="EmotiScan API", version="1.0.0")
@@ -37,6 +38,6 @@ app.include_router(youtube.router, prefix="/api/v1", tags=["YouTube"])
 # ======================================================
 @app.get("/")
 def read_root():
-    return {"message": "✅ Backend FastAPI listo con modelo de detección de emociones"}
+    return {"message": " Backend FastAPI listo con modelo de detección de emociones"}
 
 

@@ -53,20 +53,6 @@ def ensure_dir(path: str):
     if not os.path.exists(path):
         os.makedirs(path, exist_ok=True)
 
-def save_processed_face(face_ready: np.ndarray, frame_id: int, face_id: int):
-    """
-    Guarda el rostro ya preprocesado (el que realmente ve el modelo).
-    Se guarda solo si DEBUG_SAVE_FRAMES está activado.
-    """
-    if not DEBUG_SAVE_FRAMES:
-        return
-    try:
-        ensure_dir(DEBUG_DIR)
-        filename = os.path.join(DEBUG_DIR, f"frame_{frame_id:06d}_face_{face_id}.jpg")
-        cv2.imwrite(filename, cv2.cvtColor(face_ready, cv2.COLOR_RGB2BGR))
-        logger.info(f"🖼️ Rostro procesado guardado: {filename}")
-    except Exception as e:
-        logger.warning(f"No se pudo guardar rostro procesado ({e})")
 
 def read_image_to_rgb(file_bytes: bytes) -> np.ndarray:
     """Convierte bytes de imagen a RGB (mantiene compatibilidad con PIL)."""
@@ -138,8 +124,6 @@ def preprocess_face(face_rgb: np.ndarray, frame_id: int, face_id: int) -> np.nda
     # 4️⃣ Redimensionar
     resized = cv2.resize(face_rgb_ready, (TARGET_SIZE, TARGET_SIZE))
 
-    # 5️⃣ Guardar la imagen procesada (la que el modelo verá)
-    save_processed_face(resized, frame_id, face_id)
 
     # 6️⃣ Convertir a batch y preprocesar para ResNet
     img_array = np.expand_dims(resized.astype(np.float32), axis=0)
