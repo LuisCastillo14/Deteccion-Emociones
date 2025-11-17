@@ -1,10 +1,31 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
   ],
   "routes": [
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },   
-    { "src": "/(.*)", "dest": "/index.html" }          
+    {
+      "src": "/(.*\\.(?:png|svg|jpg|jpeg|webp|gif|ico|txt|css|js|json))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "https://emociones-backend-820353279129.us-central1.run.app/$1",
+      "headers": {
+        "Host": "emociones-backend-820353279129.us-central1.run.app"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
