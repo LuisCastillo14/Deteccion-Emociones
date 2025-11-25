@@ -81,7 +81,7 @@ const WebcamPage: React.FC = () => {
         setIsInitializing(false);
       } catch (err) {
         console.error("Error al acceder a la cámara:", err);
-        setError("❌ No se pudo acceder a la cámara. Revisa los permisos del navegador.");
+        setError("❌ No se pudo acceder a la cámara. Asegúrate de que esté conectada, y que los permisos del navegador estén habilitados.");
         setIsInitializing(false);
       }
     };
